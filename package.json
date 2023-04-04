@@ -1,0 +1,19 @@
+{
+  "name": "phase_1_project",
+  "version": "1.0.0",
+  "description": "hotel booking project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kongkabuu/phase-1-project.git"
+  },
+  "author": "kabuu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kongkabuu/phase-1-project/issues"
+  },
+  "homepage": "https://github.com/kongkabuu/phase-1-project#readme"
+}
