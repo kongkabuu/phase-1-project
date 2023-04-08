@@ -36,7 +36,7 @@
       <section class="explore">
         <div class="title-text">
           <p>EXPLORE</p>
-          <h1>why book with us</h1>
+          <h1>Book with us</h1>
         </div>
         <div class="explore-box">
           <div class="places">
@@ -55,15 +55,34 @@
                   <h1>Fast booking</h1>
                   <p>we're one click away from paradise.</p>
                 </div>
+                <div class="places-text">
+                  <h1>updated reviews</h1>
+                  <p>read from the people who have travelled with us.</p>
+                </div>
               </div>
             </div>
           </div>
           <div class="places-img">
             <img src="./assests/images/places1.jpg" alt="destination" />
+            <img src="./assests/images/places2.jpg" alt="destination2" />
+            <img src="./assests/images/places3.jpg" alt="destination3" />
+            <img src="./assests/images/places4.jpg" alt="destination4" />
           </div>
         </div>
       </section>
-      <section class="hotels"></section>
+      <!--hotels section-->
+      <section class="hotels">
+        <div class="title-text">
+          <p>HOTELS</p>
+          <h1>search a location</h1>
+          <input type="text" id="search" />
+          <button type="submit" id="search-btn" class="btn">search</button>
+        </div>
+        <div class="hotel-box">
+          <!--inject api data here-->
+          <div class="single-hotel" id="card"></div>
+        </div>
+      </section>
       <section class="reviews"></section>
       <section class="booking"></section>
     </main>
