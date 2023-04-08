@@ -6,7 +6,7 @@ const HEADERS = {
   "content-type": "application/json",
 };
 
-async function fetchData(term) {
+async function fetchData(term = "nairobi") {
   let locationsUrl = new URL(
     "https://hotels4.p.rapidapi.com/locations/v3/search"
   );
@@ -19,10 +19,7 @@ async function fetchData(term) {
     let results = await data.json();
     results.sr.map((obj) => {
       if (obj.type === "HOTEL") {
-        let id = obj.hotelId;
-        console.log(id);
-      } else {
-        console.log("somthing went wrong!!!");
+        console.log(obj.hotelId);
       }
     });
   } catch (err) {
@@ -82,8 +79,9 @@ function renderHotel(data) {
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("search-btn")
-    .addEventListener("submit", function (event) {
+    .addEventListener("click", function (event) {
       event.preventDefault();
+      event.stopImmediatePropagation();
 
       let searchTerm = document.getElementById("search").value;
 
