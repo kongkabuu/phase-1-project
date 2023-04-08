@@ -15,8 +15,8 @@
       <img class="logo" src="./assests/images/logo.svg " alt="logo" />
       <nav class="navigation">
         <ul class="nav-links">
-          <li><a href="#">explore</a></li>
-          <li><a href="#">hotels</a></li>
+          <li><a href="#xplore">explore</a></li>
+          <li><a href="#hotell">hotels</a></li>
           <li><a href="#">reviews</a></li>
           <li><a href="#">bookings</a></li>
         </ul>
@@ -33,7 +33,7 @@
         </div>
       </section>
       <!--feature section-->
-      <section class="explore">
+      <section class="explore" id="xplore">
         <div class="title-text">
           <p>EXPLORE</p>
           <h1>Book with us</h1>
@@ -71,7 +71,7 @@
         </div>
       </section>
       <!--hotels section-->
-      <section class="hotels">
+      <section class="hotels" id="hotell">
         <div class="title-text">
           <p>HOTELS</p>
           <h1>search a location</h1>
@@ -84,7 +84,19 @@
         </div>
       </section>
       <section class="reviews"></section>
-      <section class="booking"></section>
+      <section class="booking">
+        <div class="title-text">
+          <p>BOOKING</p>
+          <h1>Book with us</h1>
+        </div>
+        <form action="/book" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required /><br /><br />
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
     </main>
     <footer></footer>
     <script src="./assests/js/main.js"></script>

@@ -12,10 +12,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 li a {
-  font-family: "Poppins", sans-serif;
   font-weight: var(--h1-weight);
   font-size: var(--text-size);
   color: var(--text-color);
@@ -205,7 +205,7 @@ header {
   background-color: #bdb7b8;
 }
 .hotel-box {
-  width: 80%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   margin: auto;
@@ -218,6 +218,17 @@ header {
   color: var(--text-color);
 }
 .single-hotel img {
-  width: 100%;
+  width: 80%;
   border-radius: 7px;
+}
+.single-hotel h2 {
+  font-size: 40px;
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: var(--text-color);
+}
+.single-hotel p {
+  padding: 0 20px;
+  text-align: initial;
 }

@@ -19,7 +19,7 @@ async function fetchData(term = "nairobi") {
     let results = await data.json();
     results.sr.map((obj) => {
       if (obj.type === "HOTEL") {
-        console.log(obj.hotelId);
+        gettingDetails(obj.hotelId);
       }
     });
   } catch (err) {
@@ -68,6 +68,11 @@ function renderHotel(data) {
     let image = document.createElement("img");
     image.src = `${data.data.propertyInfo.propertyGallery.images[0].image.url}`;
     card.append(image);
+    let name = document.createElement("h2");
+    name.textContent = `${data.data.propertyInfo.summary.name}`;
+    let description = document.createElement("p");
+    description.textContent = `${data.data.propertyInfo.summary.tagline}`;
+    card.append(image, name, description);
   } else {
     console.log("Error: Unable to retrieve property image data");
   }
