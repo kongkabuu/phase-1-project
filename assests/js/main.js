@@ -20,6 +20,7 @@ async function fetchData(term = "nairobi") {
     results.sr.map((obj) => {
       if (obj.type === "HOTEL") {
         gettingDetails(obj.hotelId);
+        getReview(obj.hotelId);
       }
     });
   } catch (err) {
@@ -50,10 +51,28 @@ async function gettingDetails(propertyId) {
   }
 }
 
-function getName(data) {
-  return data.data.propertyInfo.summary.name;
-}
+async function getReview(id) {
+  const options = {
+    method: "POST",
+    headers: HEADERS,
+    body: `{"currency":"USD","eapid":1,"locale":"en_US","siteId":300000001,"propertyId":"${id}","size":10,"startingIndex":0}`,
+  };
 
+  try {
+    const response = await fetch(
+      "https://hotels4.p.rapidapi.com/reviews/v3/list",
+      options
+    );
+    const body = await response.json();
+    if (body) {
+      renderReviews(body);
+    } else {
+      console.log("Something went wrong");
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
 function renderHotel(data) {
   // Check if the necessary data is available
   if (
@@ -68,19 +87,31 @@ function renderHotel(data) {
     let image = document.createElement("img");
     image.src = `${data.data.propertyInfo.propertyGallery.images[0].image.url}`;
     card.append(image);
+    let overlay = document.createElement("div");
+    overlay.className = "overlay";
     let name = document.createElement("h2");
     name.textContent = `${data.data.propertyInfo.summary.name}`;
     let description = document.createElement("p");
     description.textContent = `${data.data.propertyInfo.summary.tagline}`;
-    card.append(image, name, description);
+
+    overlay.append(name, description);
+    card.append(image, overlay);
   } else {
     console.log("Error: Unable to retrieve property image data");
   }
 }
 
-// document.addEventListener("DOMContentLoaded", async () => {
-//   await gettingDetails(17924777);
-// });
+function renderReviews(data) {
+  let card = document.querySelector("#hotel1-review");
+  let name = document.createElement("p");
+  name.textContent = `${data.data.propertyInfo.reviewInfo.reviews[0].reviewRegion.__typename}`;
+  let text = document.createElement("p");
+  text.textContent = `review 1: ${data.data.propertyInfo.reviewInfo.reviews[0].text}`;
+  let value = document.createElement("p");
+  value.textContent = `${data.data.propertyInfo.reviewInfo.reviews[0].reviewScoreWithDescription.value}`;
+  card.append(text, value, name);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("search-btn")

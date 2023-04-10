@@ -202,10 +202,10 @@ header {
 .hotels {
   width: 100%;
   padding: 70px 0;
-  background-color: #bdb7b8;
+  background-color: rgb(189, 183, 184);
 }
 .hotel-box {
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
   margin: auto;
@@ -215,12 +215,14 @@ header {
   text-align: center;
   border-radius: 7px;
   margin-bottom: 20px;
-  color: var(--text-color);
+  position: relative;
 }
+
 .single-hotel img {
   width: 80%;
   border-radius: 7px;
 }
+
 .single-hotel h2 {
   font-size: 40px;
   text-align: left;
@@ -231,4 +233,23 @@ header {
 .single-hotel p {
   padding: 0 20px;
   text-align: initial;
+}
+/*reviews*/
+.reviews {
+  width: 100%;
+  padding: 70px 0;
+  background-color: rgb(197, 189, 191);
+}
+.hotel-review {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/*booking form*/
+.booking {
+  width: 100%;
+  padding: 70px 0;
+  background-color: rgb(214, 207, 208);
 }
