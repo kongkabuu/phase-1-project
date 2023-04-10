@@ -96,13 +96,77 @@
           <p>BOOKING</p>
           <h1>Book with us</h1>
         </div>
-        <form action="/book" method="post">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required /><br /><br />
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" required /><br /><br />
-          <input type="submit" value="Submit" />
-        </form>
+        <div class="main-form">
+          <form
+            action="http://localhost:3000/book"
+            method="post"
+            id="user-data"
+          >
+            <div>
+              <span> your fullname name? </span>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="name"
+                required
+              />
+            </div>
+            <div>
+              <span>Your email adrress? </span>
+              <input
+                type="email"
+                name="name"
+                id="name"
+                placeholder="email"
+                required
+              />
+            </div>
+            <div>
+              <span>how many people </span>
+              <select name="people" id="people">
+                <option value=""><--people--></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div>
+              <span>what time? </span>
+              <input
+                type="text"
+                name="time"
+                id="time"
+                placeholder="arrival time"
+                required
+              />
+            </div>
+            <div>
+              <span>arrival date ? </span>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="date"
+                required
+              />
+            </div>
+            <div>
+              <span>your phone number? </span>
+              <input
+                type="number"
+                name="number"
+                id="number"
+                placeholder="write your number here"
+                required
+              />
+            </div>
+            <div class="sumbit-btn">
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
       </section>
     </main>
     <footer></footer>

@@ -253,3 +253,13 @@ header {
   padding: 70px 0;
   background-color: rgb(214, 207, 208);
 }
+.main-form div {
+  margin: 10px 20px;
+  width: 300px;
+  display: inline-block;
+}
+.main-form div input {
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px;
+}

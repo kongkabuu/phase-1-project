@@ -111,7 +111,36 @@ function renderReviews(data) {
   value.textContent = `${data.data.propertyInfo.reviewInfo.reviews[0].reviewScoreWithDescription.value}`;
   card.append(text, value, name);
 }
+function storeUserData() {
+  let form = document.querySelector("#user-data");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new formData(form);
+    const data = object.fromEntries(formData);
+    postingUserData(data);
+  });
+}
 
+async function postingUserData(data) {
+  let options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+  try {
+    const response = await fetch(" http://localhost:3000/book", options);
+    const body = await response.json();
+    if (body) {
+      renderReviews(data);
+    } else {
+      console.log("Something went wrong");
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("search-btn")
@@ -122,6 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let searchTerm = document.getElementById("search").value;
 
       fetchData(searchTerm);
+      storeUserData();
     });
-  console.log(fetchData());
 });
