@@ -17,8 +17,8 @@
         <ul class="nav-links">
           <li><a href="#xplore">explore</a></li>
           <li><a href="#hotell">hotels</a></li>
-          <li><a href="#">reviews</a></li>
-          <li><a href="#">bookings</a></li>
+          <li><a href="#review-sec">reviews</a></li>
+          <li><a href="booking-sec">bookings</a></li>
         </ul>
       </nav>
     </header>
@@ -84,22 +84,23 @@
         </div>
       </section>
       <!--reviews here-->
-      <section class="reviews">
+      <section class="reviews" id="review-sec">
         <div class="title-text">
           <p>REVIEW</p>
           <h1>what others thought</h1>
         </div>
         <div class="hotel-review" id="hotel1-review"></div>
       </section>
-      <section class="booking">
+      <!--booking section-->
+      <section class="booking" id="booking-sec">
         <div class="title-text">
           <p>BOOKING</p>
           <h1>Book with us</h1>
         </div>
         <div class="main-form">
           <form
-            action="http://localhost:3000/book"
-            method="post"
+            action=" http://localhost:3000/book"
+            method="POST"
             id="user-data"
           >
             <div>

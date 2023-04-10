@@ -113,11 +113,13 @@ function renderReviews(data) {
 }
 function storeUserData() {
   let form = document.querySelector("#user-data");
+  const formData = new formData(form);
+  const data = object.fromEntries(formData);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new formData(form);
-    const data = object.fromEntries(formData);
+
     postingUserData(data);
+    console.log(data);
   });
 }
 
